@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Streaming Platform</title>
+  <style>
+    /* General Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-color: #f5f5f5;
+      color: #333;
+      padding: 0;
+      margin: 0;
+    }
+
+    /* Header Section */
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px 0;
+    }
+
+    header .container {
+      width: 80%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+
+    nav ul li {
+      margin-left: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #4caf50;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('https://via.placeholder.com/1600x800/000/fff?text=Music+Stream+Hero') no-repeat center center/cover;
+      padding: 100px 0;
+      color: #fff;
+      text-align: center;
+    }
+
+    .hero .container {
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .music-player {
+      margin-top: 30px;
+    }
+
+    .music-player button {
+      background-color: #4caf50;
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .music-player button:hover {
+      background-color: #45a049;
+    }
+
+    /* Featured Songs Section */
+    .featured-songs {
+      background-color: #fff;
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .featured-songs h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .featured-songs .songs {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .featured-songs .song {
+      background-color: #f1f1f1;
+      padding: 20px;
+      border-radius: 10px;
+      width: 250px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .featured-songs .song:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .featured-songs .song img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .featured-songs .song p {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+    }
+
+    .featured-songs .song button {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .featured-songs .song button:hover {
+      background-color: #45a049;
+    }
+
+    /* Footer Section */
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container">
+      <h1>Welcome to MusicStream</h1>
+      <nav>
+        <ul>
+          <li><a href="dashboard2.html">Home</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html">Register</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section with Music Player Preview -->
+  <section class="hero">
+    <div class="container">
+      <h2 style="color:brown;">Discover, Listen, and Enjoy Music Anytime</h2>
+      <p style="color: green;">Explore your favorite tracks, create playlists, and share music with friends.</p>
+      <div class="music-player">
+        <audio id="music-player" controls>
+          <source src="music/song1.mp3" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
+        <button onclick="playSong()">Play Preview</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Songs Section -->
+  <section class="featured-songs">
+    <div class="container">
+      <h2>Featured Songs</h2>
+      <div class="songs">
+        <!-- Loop through songs dynamically -->
+        <div class="song">
+          <img src="assets/images/song-thumbnail.jpg" alt="Song Thumbnail">
+          <p>Chuttamalle (Aravinda Sametha)</p>
+          <button onclick="playSong('music/song1.mp3')">Play</button>
+        </div>
+        <div class="song">
+          <img src="assets/images/song-thumbnail.jpg" alt="Song Thumbnail">
+          <p>Anaganaga (Aravinda Sametha)</p>
+          <button onclick="playSong('music/song2.mp3')">Play</button>
+        </div>
+        <div class="song">
+          <img src="assets/images/song-thumbnail.jpg" alt="Song Thumbnail">
+          <p>Naatu Naatu (RRR)</p>
+          <button onclick="playSong('music/song3.mp3')">Play</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 MusicStream. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function playSong(song) {
+      const player = document.getElementById('music-player');
+      player.src = song;
+      player.play();
+    }
+  </script>
+
+</body>
+</html>
